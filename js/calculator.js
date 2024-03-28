@@ -12,12 +12,14 @@ const calcContainer = createElement('div', {
 })
 const displayInputbox = createElement('input', {
     class: 'col-xl-12 form-control display',
-    placeholder: 0
+    id: 'result',
+    placeholder: 0,
 })
 
 // Create buttons
 const cancelBtn = createElement('button', {
     class: 'btn btn-lg col-xl-3 border-0',
+    id: 'clear',
 })
 cancelBtn.textContent = "C"
 //
@@ -46,19 +48,19 @@ divideBtn.textContent = "/"
 //
 const minusBtn = createElement('button', {
     class: 'btn btn-lg col-xl-3 border-0',
-    id: 'minusval'
+    id: 'subtract'
 })
 minusBtn.textContent = "-"
 //
 const plusBtn = createElement('button', {
     class: 'btn btn-lg col-xl-3 border-0',
-    id: 'plusval'
+    id: 'add'
 })
 plusBtn.textContent = "+"
 //
 const equalBtn = createElement('button', {
     class: 'btn btn-lg col-xl-3 border-0',
-    id: 'equalval'
+    id: 'equal'
 })
 equalBtn.textContent = "="
 
@@ -78,11 +80,11 @@ calcContainer.append(equalBtn);
 for (let i = 0; i <= 9; i++){
     const createBtn = createElement('button', {
         class: 'btn btn-lg col-xl-3 border-0',
-        id: `button${i}`
+        id: `${i}`
     })
     let value = createBtn.textContent = i;
     calcContainer.append(createBtn);
-    let btnVal = document.getElementById(`button${i}`)
+    let btnVal = document.getElementById(`${i}`)
     btnVal.addEventListener('click', () => {
         // console.log(value)
         displayInputbox.value += value
@@ -108,14 +110,14 @@ backspcBtn.addEventListener('click', () => {
     displayInputbox.value = displayInputbox.value.slice(0, -1);
 })
 
-let plusVal = document.getElementById('plusval')
+let plusVal = document.getElementById('add')
 plusVal.addEventListener('click', () => {
-    displayInputbox.value += plusVal.textContent
+    displayInputbox.value += add.textContent
 })
 
-let minusVal = document.getElementById('minusval')
+let minusVal = document.getElementById('subtract')
 minusVal.addEventListener('click', () => {
-    displayInputbox.value += minusVal.textContent
+    displayInputbox.value += subtract.textContent
 })
 
 let divideVal = document.getElementById('divideval')
@@ -133,11 +135,9 @@ dotVal.addEventListener('click', () => {
     displayInputbox.value += dotVal.textContent
 })
 
-let result;
-let equalVal = document.getElementById('equalval')
+let equalVal = document.getElementById('equal')
 equalVal.addEventListener('click', () => {
-    // let call = displayInputbox.value
-    // console.log(call)
+    let result;
     result = eval?.(displayInputbox.value)
     displayInputbox.value = result
 })   
