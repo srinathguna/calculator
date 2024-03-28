@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+h1{
+    padding: 20px 0;
+    text-align: center;
+    color: rgb(55, 102, 230);
+}
+.display{
+    height: 70px;
+}
