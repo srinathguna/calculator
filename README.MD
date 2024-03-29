@@ -34,4 +34,3 @@ Run the file separate to view the output
 1. open the folder view the js file.
 2. Run the index file 'index.html' to view the page
 
-## screenshots
