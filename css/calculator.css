@@ -12,5 +12,26 @@ h1{
     color: rgb(55, 102, 230);
 }
 .display{
-    height: 70px;
+    height: 75px;
+}
+.btn{
+    height: 64px;
+}
+
+@media screen and (max-width:575px) {
+    .btn{
+        width: 25%;
+    }
+    .secondrow .num-col{
+        flex:4 0 0;
+    }
+    .secondrow .num-col .btn{
+        width: 33.33%;
+    }
+    .secondrow .spl-col{
+        flex:1 0 0;
+    }
+     .secondrow .spl-col .btn{
+        width: 100%;
+     }
 }
